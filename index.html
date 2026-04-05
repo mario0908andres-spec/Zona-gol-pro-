@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ZONA GOL PRO</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+scroll-behavior:smooth;
+color:white;
+background: linear-gradient(to bottom, #000000, #001f3f, #00aaff);
+}
+
+/* INTRO */
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#intro img{width:320px;}
+
+h1,h2{
+text-shadow:0 0 15px #00aaff;
+animation:mover 2s infinite alternate;
+}
+
+@keyframes mover{
+from{transform:translateY(0);}
+to{transform:translateY(-10px);}
+}
+
+/* MENU */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+padding:10px;
+z-index:100;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECCIONES */
+section{
+background:white;
+color:black;
+margin:80px auto;
+padding:20px;
+border-radius:15px;
+width:80%;
+}
+
+/* TITULO */
+.titulo{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+}
+
+.balon{
+width:60px;
+animation:girar 3s linear infinite;
+}
+
+@keyframes girar{
+from{transform:rotate(0);}
+to{transform:rotate(360deg);}
+}
+
+/* PRODUCTOS */
+.productos{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.producto{
+background:#f4f4f4;
+padding:10px;
+border-radius:10px;
+}
+
+.producto img{
+width:120px;
+height:120px;
+object-fit:cover;
+}
+
+/* BOTONES */
+button{
+background:#0077cc;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+/* MEMORIA */
+#tablero{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.carta{
+height:80px;
+background:#000;
+color:white;
+font-size:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+border-radius:10px;
+}
+
+/* GIF GANADOR */
+#overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+display:none;
+}
+
+/* ENCUESTA */
+.barra{
+background:#0077cc;
+height:20px;
+margin:10px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+<img src="logo.png">
+<h2>Tu estilo en la cancha comienza aquí</h2>
+</div>
+
+<!-- MENU -->
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#quienes">Quiénes</a>
+<a href="#video">Video</a>
+<a href="#productos">Productos</a>
+<a href="#juego">Juego</a>
+<a href="#carrito">Carrito</a>
+<a href="#encuesta">Encuesta</a>
+<a href="#mapa">Ubicación</a>
+<a href="#visitas">Visitas</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<!-- TITULO -->
+<section id="inicio">
+<div class="titulo">
+<img class="balon" src="https://cdn-icons-png.flaticon.com/512/53/53283.png">
+<h1>ZONA GOL PRO</h1>
+<img class="balon" src="https://cdn-icons-png.flaticon.com/512/53/53283.png">
+</div>
+</section>
+
+<!-- QUIENES -->
+<section id="quienes">
+<h2>QUIÉNES SOMOS</h2>
+<img src="quienes.jpg" width="400">
+
+<p>Somos una tienda deportiva especializada en ofrecer productos de alta calidad para futbolistas y amantes del deporte...</p>
+
+<h3>Misión</h3>
+<p>Brindar productos deportivos de excelente calidad que impulsen el rendimiento...</p>
+
+<h3>Visión</h3>
+<p>Ser una tienda líder reconocida por la innovación y compromiso...</p>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+<h2>VIDEO</h2>
+<video src="video.mp4" controls width="650"></video>
+</section>
+
+<!-- JUEGO -->
+<section id="juego" style="position:relative;">
+<h2>MEMORIA FUTBOLERA</h2>
+
+<div id="tablero"></div>
+
+<div id="overlay">
+<video src="ganaste.mp4" autoplay loop muted width="300"></video>
+</div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+<h2>PRODUCTOS</h2>
+
+<div class="productos">
+
+<div class="producto">
+<img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/123212096_01/public">
+<p>$60.000</p>
+<button onclick="agregar(60000)">Agregar</button>
+</div>
+
+<div class="producto">
+<img src="https://images.prodirectsport.com/ProductImages/Main/257972_Main_Thumb_1060311.jpg">
+<p>$250.000</p>
+<button onclick="agregar(250000)">Agregar</button>
+</div>
+
+<div class="producto">
+<img src="https://www.olymphus.cl/wp-content/uploads/2023/01/Guante-Arquero-APOLO_NEGRO_PALMA-BLANCA-800x800.jpg">
+<p>$150.000</p>
+<button onclick="agregar(150000)">Agregar</button>
+</div>
+
+<div class="producto">
+<img src="https://m.media-amazon.com/images/I/61p2Q++ytPL._AC_SL1100_.jpg">
+<p>$2.000.000</p>
+<button onclick="agregar(2000000)">Agregar</button>
+</div>
+
+<div class="producto">
+<img src="https://contents.mediadecathlon.com/p3017919/k$5a218faf6f27b1bb6c1a11b8d445dc9e/picture.jpg">
+<p>$200.000</p>
+<button onclick="agregar(200000)">Agregar</button>
+</div>
+
+<div class="producto">
+<img src="https://www.eshsport.com/storage/media/t4jrHZFWscosLOZVYLjmvRMGUo2WK9nLFRzRDzXy.jpg">
+<p>$180.000</p>
+<button onclick="agregar(180000)">Agregar</button>
+</div>
+
+</div>
+</section>
+
+<!-- CARRITO -->
+<section id="carrito">
+<h2>Carrito</h2>
+<ul id="lista"></ul>
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="vaciar()">Vaciar carrito</button>
+<button onclick="comprar()">Comprar por WhatsApp</button>
+</section>
+
+<!-- ENCUESTA -->
+<section id="encuesta">
+<h2>Encuesta</h2>
+
+<button onclick="votar('m')">Real Madrid</button>
+<button onclick="votar('b')">Barcelona</button>
+
+<p>Madrid: <span id="m">0</span></p>
+<div class="barra" id="bm"></div>
+
+<p>Barcelona: <span id="b">0</span></p>
+<div class="barra" id="bb"></div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa">
+<h2>Ubicación</h2>
+<iframe src="https://www.google.com/maps?q=Barrancabermeja&output=embed" width="400" height="300"></iframe>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+<h2>Contacto</h2>
+
+<p>Teléfono: 321 7294582</p>
+
+<p>Email: 
+<a href="mailto:Juniorleonelbellopadilla@gmail.com">
+Juniorleonelbellopadilla@gmail.com
+</a>
+</p>
+
+<p>Horario: Lunes a sábado 8:00am - 6:00pm</p>
+
+<a href="https://wa.me/573217294582" target="_blank">
+WhatsApp
+</a>
+
+</section>
+
+<!-- VISITAS -->
+<section id="visitas">
+<h2>Visitas</h2>
+<p id="contador">0</p>
+</section>
+
+<script>
+setTimeout(()=>{document.getElementById("intro").style.display="none";},3000);
+
+/* CARRITO */
+let total=0;
+function agregar(p){
+total+=p;
+document.getElementById("total").innerText=total;
+
+let li=document.createElement("li");
+li.innerText="$"+p+" ❌";
+li.onclick=function(){li.remove(); total-=p; document.getElementById("total").innerText=total;}
+document.getElementById("lista").appendChild(li);
+}
+
+function vaciar(){
+total=0;
+document.getElementById("total").innerText=0;
+document.getElementById("lista").innerHTML="";
+}
+
+function comprar(){
+window.open("https://wa.me/573217294582?text=Compra total:"+total);
+}
+
+/* ENCUESTA */
+let m=0,b=0;
+function votar(x){
+if(x=="m")m++; else b++;
+document.getElementById("m").innerText=m;
+document.getElementById("b").innerText=b;
+document.getElementById("bm").style.width=m*20+"px";
+document.getElementById("bb").style.width=b*20+"px";
+}
+
+/* VISITAS */
+let v=localStorage.getItem("v")||0;
+v++;
+localStorage.setItem("v",v);
+document.getElementById("contador").innerText=v;
+
+/* MEMORIA */
+let emojis=["⚽","🧤","👕","🥅","⚽","🧤","👕","🥅"];
+emojis.sort(()=>0.5-Math.random());
+
+let tablero=document.getElementById("tablero");
+let primera=null;
+
+emojis.forEach(e=>{
+let c=document.createElement("div");
+c.className="carta";
+c.dataset.valor=e;
+
+c.onclick=function(){
+if(c.innerText!="") return;
+c.innerText=e;
+
+if(!primera){primera=c;}
+else{
+if(primera.dataset.valor==c.dataset.valor){
+primera=null;
+
+if([...document.querySelectorAll(".carta")].every(x=>x.innerText!="")){
+document.getElementById("overlay").style.display="block";
+}
+}else{
+setTimeout(()=>{
+c.innerText="";
+primera.innerText="";
+primera=null;
+},500);
+}
+}
+};
+
+tablero.appendChild(c);
+});
+</script>
+
+</body>
+</html>
